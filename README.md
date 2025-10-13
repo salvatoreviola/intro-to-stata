@@ -8,13 +8,13 @@ The objective of this course is to give students an overview of the Stata statis
 See the course syllabus for a more complete overview of the topics covered in each section
 
 - Class 1: October 17th
-    - In the first class we will familiarize ourselves with Stata, importing and preparing data, and exporting results
+    - In the first class we will familiarize ourselves with Stata, importing and preparing data, and exporting results.
 
 - Class 2: October 24th
-    - The second class will be devoted to some advanced data manipulation techniques in Stata
+    - The second class will be devoted to more complex data manipulation techniques in Stata.
 
 - Class 3: October 31st
-    - Class 3 will cover some more advanced functions of Stata
+    - Class 3 will cover some advanced functionality of Stata and outline standard project formatting.
 
 
 
