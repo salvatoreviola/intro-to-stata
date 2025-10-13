@@ -1,0 +1,15 @@
+# Ignore solutions to in-class exercises
+*ex.do
+
+# Ignore solutions to problem sets
+*sol.do
+
+# Ignore README draft
+README.ipynb
+
+# Ignore python virtual environment
+.venv/
+
+# Ignore future classes
+Classes/Class 2/
+Classes/Class 3/Class 3 - Project/
