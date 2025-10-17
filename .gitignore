@@ -10,6 +10,8 @@ README.ipynb
 # Ignore python virtual environment
 .venv/
 
+# Disregard Stata temp files
+*.stswp
+
 # Ignore future classes
-Classes/Class 2/
 Classes/Class 3/Class 3 - Project/
