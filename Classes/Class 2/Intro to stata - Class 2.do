@@ -68,38 +68,13 @@ A multi-line comment can be defined using /* to begin and */ to end as you see h
 5. Does the effectiveness of the drugs vary if older than 50 years?
 (Hint: -if-)
 
-6. Export the regressions in 4 and 5 with outreg2 or asdoc, show variable labels
+6. Export the regressions in 4 and 5 with outreg2 or estout, show variable labels
 (Hint: Are they installed? ssc install outreg2. Take a look at the -help- files)
 
 */
 
 
 
-
-
-
-*** ACTIVITY ***
-/*
-
-1. Load the census dataset
-(Hint: -sysuse-)
-
-2. Check out the effect of marriage on death. Is it what you expect?
-(Hint: try a regression. What other variables should you include?)
-
-3. Make a scatter plot of the relationship between death and marriage
-
-4. Layer the scatter plot using two separate age groups (above and below the median = 29.54)
-
-ex. scatter divorce marriage if medage .. || scatter divorce marriage if medage ...
-
-5. Add labels to the LEGEND to identify which points belong to each age group
-(Hint: use the -help scatter- file, look for legend options)
-
-6. Now, plot the two graphs side-by-side-by-side and add state labels
-(Hint: see -help graph combine- and reference graph names from the example (e.g g1))
-
-*/
 
 
 
@@ -244,11 +219,6 @@ unique(country)
 *** ACTIVITY
 * Either using -egen- or -collapse-, change the dataset to include a new variable which has the average unemployment rate by country by year 
 * Don't forget to check the -help- file for -collapse-
-
-bysort country year: egen m_unemp = mean(unemp_rate)
-
-
-collapse (mean) unemp_rate, by(country year)
 
 
 
@@ -417,6 +387,31 @@ reshape wide inc ue, i(id) j(year)
 
 
 *** Extra time for examples with my code and questions 
+
+
+
+*** ACTIVITY ***
+/*
+
+1. Load the census dataset
+(Hint: -sysuse-)
+
+2. Check out the effect of marriage on death. Is it what you expect?
+(Hint: try a regression. What other variables should you include?)
+
+3. Make a scatter plot of the relationship between death and marriage
+
+4. Layer the scatter plot using two separate age groups (above and below the median = 29.54)
+
+ex. scatter divorce marriage if medage .. || scatter divorce marriage if medage ...
+
+5. Add labels to the LEGEND to identify which points belong to each age group
+(Hint: use the -help scatter- file, look for legend options)
+
+6. Now, plot the two graphs side-by-side-by-side and add state labels
+(Hint: see -help graph combine- and reference graph names from the example (e.g g1))
+
+*/
 
 
 
