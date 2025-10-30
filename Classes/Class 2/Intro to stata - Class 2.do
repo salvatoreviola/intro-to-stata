@@ -17,7 +17,7 @@ clear all
 * Set current working directory
 cd "C:\Users\salva\OneDrive - Universitat de Barcelona\Intro to stata"
 
-cd "C:\Users\room\OneDrive - Universitat de Barcelona\Intro to stata"
+cd "C:\Users\aules\OneDrive - Universitat de Barcelona\Intro to stata\intro-to-stata"
 
 
 ********************************************************************************
@@ -86,9 +86,9 @@ A multi-line comment can be defined using /* to begin and */ to end as you see h
 sysuse census.dta, clear
 
 ** Local - store values/variables to be used immediately
-local lname poplt5 pop5_17 pop18p pop65p popurban death marriage divorce
+local variables poplt5 pop5_17 pop18p pop65p popurban death marriage divorce
 
-summarize `lname' 	// summarizes all of the variables stored in the local lname
+summarize `variables' 	// summarizes all of the variables stored in the local lname
 
 return list			// displays a list of everything store by the command sum...
 
@@ -101,6 +101,7 @@ return list		// shows what is store in stata memory after the summarize command
 
 * Creates a local call poplt15_mean which is assigned the mean of the variable poplt15 stored from the summarize command
 local poplt15_mean = `r(mean)' 	
+
 
 * Displays the value of the local poplt15_mean
 display `poplt15_mean'		// in order for this to run, you need to run the local command at the same time * that is, select both codes and run them
@@ -140,10 +141,11 @@ sysuse auto.dta, clear		// load new dataset
 * separately for foreign and domestic cars, sums all of the prices into one new var
 sort region
 
-by region: egen tot_pop = sum(pop)
+bysort region: egen tot_pop = sum(pop)
+
 
 * separately for foreign and domestic cars, counts the number of cars (obs)
-by region: egen num_states = count(state)
+bys region: egen num_states = count(state)
 
 gen avp = tot_pop/num_states
 
@@ -217,10 +219,10 @@ unique(country)
 
 
 *** ACTIVITY
-* Either using -egen- or -collapse-, change the dataset to include a new variable which has the average unemployment rate by country by year 
+* Using -collapse-, change the dataset to include a new variable which has the average unemployment rate by region (ex. Wien avg. unemployment between 2013 and 2024)
 * Don't forget to check the -help- file for -collapse-
 
-
+collapse (mean) m_unemp = unemp_rate, by(NUTS2)
 
 
 
@@ -232,7 +234,7 @@ save "autosize.dta", replace
 list
 
 webuse autoexpense, clear // slightly different dataset with some similar units
-
+use autoexpense, clear
 save "autoexpense.dta", replace
 
 list
