@@ -14,3 +14,6 @@ README.ipynb
 *.stswp
 
 # Ignore future classes
+
+# Ignore Exam Materials - remove 5 mins before exam
+Exam/
